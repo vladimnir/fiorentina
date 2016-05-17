@@ -1,0 +1,33 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$customerSession = $objectManager->get('Magento\Customer\Model\Session');
+?>
+<div class="experta">
+    <?php if (!$customerSession->isLoggedIn()):
+        ?>
+        <a class="link-ulu">¿eres cliente experta?</a>
+        <div class="box-access box-content">
+            <a href="<?php echo $this->getUrl('cliente_experta', ['_secure' => false]) . "customer/account/login/?tab=0" ?>"><span>INICIA SESíON</span></a>
+            <a href="<?php echo $this->getUrl('cliente_experta', ['_secure' => false]) . "customer/account/login/?tab=2" ?>"><span>activa tu cuenta experta</span></a>
+            <a href="#"><span>¿qué es cliente experta?</span></a>
+        </div>
+        <?php
+    else:
+        $customerRepository = $objectManager
+                ->get('Magento\Customer\Api\CustomerRepositoryInterface');
+        $customer = $customerRepository->getById($customerSession->getId());
+        $attributeObject = $customer->getCustomAttribute('sifi_id');
+        $sifiId = "";
+        if ($attributeObject != null) {
+            $sifiId = $attributeObject->getValue();
+        }
+        ?>
+        <a class="link-ulu logged">Mi cuenta</a>
+        <div class="box-access box-content logged">
+            <p># cuenta: <span><?php echo $sifiId; ?></span></p>
+            <a href="<?php echo $block->getUrl('customer/account', ['_secure' => false]); ?>"><span>mi cuenta / mi perfil</span></a>
+            <a href="<?php echo $block->getUrl('sales/order/history/', ['_secure' => false]); ?>"><span>mis pedidos</span></a>
+            <a href="#">mis facturas</a>
+        </div>
+    <?php endif; ?>
+</div>

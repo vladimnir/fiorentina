@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.wrapper">
+            <container name="header.drops" as="header_drops" label="Page Header Drops"  htmlTag="div" htmlClass="header-drop" before="header.container"/>
+        </referenceContainer>
+        <referenceContainer name="header.container">                        
+            <container name="header.panel.wrapper" htmlClass="panel wrapper clearfix" htmlTag="div" before="-"/>            
+        </referenceContainer>
+        <move element="header.container" destination="header.drops"/>        
+        <move element="navigation.sections" destination="header.drops"/>
+        
+        <move element="header.panel" destination="header.panel.wrapper"/>
+        <move element="top.links" destination="header.panel" after="-"/>
+        <move element="catalog.topnav" destination="store.menu" before="-"/>
+        <move element="catalog.topnav" destination="store.menu" before="-"/>
+        <move element="logo" destination="header.panel" before="-" />        
+        <referenceContainer name="page.top">
+            <block class="Magento\Framework\View\Element\Template" name="navigation.sections" before="-" template="Magento_Theme::html/sections.phtml">
+                <arguments>
+                    <argument name="group_name" xsi:type="string">navigation-sections</argument>
+                    <argument name="group_css" xsi:type="string">nav-sections</argument>
+                </arguments>
+                <block class="Magento\Customer\Block\Account\AuthorizationLink" name="authorization.mobile" before="-"
+                       template="account/link/authorization.mobile.phtml"/>
+                <block class="Magento\Framework\View\Element\Template" name="store.menu" group="navigation-sections" template="Magento_Theme::html/container.phtml">
+                    <arguments>
+                        <argument name="title" translate="true" xsi:type="string">Menu</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Text" name="store.links" group="navigation-sections">
+                    <arguments>
+                        <argument name="title" translate="true" xsi:type="string">Account</argument>
+                        <argument name="use_force" xsi:type="boolean">true</argument>
+                        <argument name="text" xsi:type="string"><![CDATA[<!-- Account links -->]]></argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Template" name="store.settings" group="navigation-sections" template="Magento_Theme::html/container.phtml">
+                    <arguments>
+                        <argument name="title" translate="true" xsi:type="string">Settings</argument>
+                    </arguments>
+                    <block class="Magento\Store\Block\Switcher" name="store.settings.language" template="switch/languages.phtml">
+                        <arguments>
+                            <argument name="id_modifier" xsi:type="string">nav</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Directory\Block\Currency" name="store.settings.currency" before="store_language" template="currency.phtml">
+                        <arguments>
+                            <argument name="id_modifier" xsi:type="string">nav</argument>
+                        </arguments>
+                    </block>                    
+                </block>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="footer-container">           
+            <referenceBlock name="footer_links" remove="true"/> 
+            <referenceBlock name="store_switcher" remove="true"/> 
+            <referenceBlock name="copyright" remove="true"/>
+            <referenceBlock name="report.bugs" remove="true"/> 
+        </referenceContainer>
+        <referenceContainer name="footer">            
+            <block class="Magento\Framework\View\Element\Template" name="footer.links" template="Magento_Theme::html/footer.links.phtml"/>            
+           <block class="Magento\Newsletter\Block\Subscribe" name="form.subscribe" as="subscribe" after="footer.links" template="subscribe.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="footer.links.secure" template="Magento_Theme::html/footer.links.secure.phtml"/>            
+        </referenceContainer>
+        <referenceBlock name="top.links">            
+            <arguments>
+                <argument name="css_class" xsi:type="string">header links right top-links</argument>
+            </arguments>            
+                
+            <block class="Magento\Framework\View\Element\Html\Link" name="points.link" after="help.link">
+                <arguments>
+                    <argument name="label" xsi:type="string">  </argument>
+                    <argument name="path" xsi:type="string" translate="false">wishlist</argument>
+                    <argument name="class" xsi:type="string">pointslistlink</argument>
+                    <argument name="id" xsi:type="string">pointslistlink</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Template" name="help.link" template="Magento_Theme::html/header/help.phtml" />  
+            
+            <referenceBlock name="catalog.compare.link" remove="true"/>
+            <referenceBlock name="register-link" remove="true" />           
+            <referenceBlock name="my-account-link" remove="true" />                                                                   
+            <referenceBlock name="invitation_link_top" remove="true" />  
+            <referenceBlock name="storelocator-top-link" remove="true" />         
+        </referenceBlock>
+        <referenceContainer name="header.panel">           
+            <block class="Magento\Framework\View\Element\Template" name="experta-home" template="Magento_Theme::html/header/experta.phtml" />                           
+        </referenceContainer>
+        <!--referenceBlock name="sale.reorder.sidebar" remove="true"/-->    
+        <!--referenceBlock name="catalog.compare.sidebar" remove="true" /-->   
+        <!--referenceBlock name="wishlist_sidebar" remove="true" /-->         
+        <move element="minicart" destination="top.links" after="points.link" />
+        <move element="logo" destination="header.panel" after="storelocator-home" />
+        <!--referenceBlock name="top.search" remove="true" /-->     
+        <move element="top.search" destination="top.links" before="help.link" />    
+    </body>
+</page>

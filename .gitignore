@@ -1,0 +1,6 @@
+/pub/media
+/var
+
+!/composer.json
+!/composer.lock
+!/README.md

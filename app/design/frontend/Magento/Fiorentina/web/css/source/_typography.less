@@ -1,0 +1,216 @@
+// /**
+//  * Copyright © 2016 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+.lib-font-face(
+@family-name: @font-family-name__base,
+@font-path: '@{baseDir}fonts/opensans/light/opensans-300',
+@font-weight: 300,
+@font-style: normal
+);
+
+.lib-font-face(
+@family-name: @font-family-name__base,
+@font-path: '@{baseDir}fonts/opensans/regular/opensans-400',
+@font-weight: 400,
+@font-style: normal
+);
+
+.lib-font-face(
+@family-name: @font-family-name__base,
+@font-path: '@{baseDir}fonts/opensans/semibold/opensans-600',
+@font-weight: 600,
+@font-style: normal
+);
+
+.lib-font-face(
+@family-name: @font-family-name__base,
+@font-path: '@{baseDir}fonts/opensans/bold/opensans-700',
+@font-weight: 700,
+@font-style: normal
+);
+/*@font-face {
+    font-family: 'Dax OT Bold';
+    src: url('../fonts/DaxOT-Bold.otf');    
+    font-weight: 300;
+    font-style: normal
+}*/
+@font-face {
+  font-family: 'Dax OT Bold';
+  src: url('../fonts/DaxOT-Bold.eot?#iefix') format('embedded-opentype'),  url('../fonts/DaxOT-Bold.otf')  format('opentype'),
+  url('../fonts/DaxOT-Bold.woff') format('woff'), url('../fonts/DaxOT-Bold.ttf')  format('truetype'), url('../fonts/DaxOT-Bold.svg#DaxOT-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Dax OT Light';
+  src: url('../fonts/DaxOT-Light.eot?#iefix') format('embedded-opentype'),  url('../fonts/DaxOT-Light.otf')  format('opentype'),
+  url('../fonts/DaxOT-Light.woff') format('woff'), url('../fonts/DaxOT-Light.ttf')  format('truetype'), url('../fonts/DaxOT-Light.svg#DaxOT-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/*@font-face {
+    font-family: 'Dax OT Light';
+    src: url('../fonts/DaxOT-Light.otf');
+}*/
+/*@font-face {
+    font-family: 'Dax OT Medium';
+    src: url('../fonts/DaxOT-Medium.otf');
+}*/
+@font-face {
+  font-family: 'Dax OT Medium';
+  src: url('../fonts/DaxOT-Medium.eot?#iefix') format('embedded-opentype'),  url('../fonts/DaxOT-Medium.otf')  format('opentype'),
+  url('../fonts/DaxOT-Medium.woff') format('woff'), url('../fonts/DaxOT-Medium.ttf')  format('truetype'), url('../fonts/DaxOT-Medium.svg#DaxOT-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/*@font-face {
+    font-family: 'Dax OT Regular';
+    src: url('../fonts/DaxOT.otf');
+}*/
+@font-face {
+  font-family: 'Dax OT Regular';
+  src: url('../fonts/DaxOT.eot?#iefix') format('embedded-opentype'),  url('../fonts/DaxOT.otf')  format('opentype'),
+  url('../fonts/DaxOT.woff') format('woff'), url('../fonts/DaxOT.ttf')  format('truetype'), url('../fonts/DaxOT.svg#DaxOT') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/*@font-face {
+    font-family: 'Bebas Neue Regular';
+    src: url('../fonts/BebasNeueRegular.otf');    
+    font-weight: 300;
+    font-style: normal
+}*/
+/*@font-face {
+    font-family: 'Bebas Neue';
+    src: url('../../fonts/BebasNeue.otf');
+}*/
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('../fonts/bebasneue-webfont.eot');
+  src: url('../fonts/bebasneue-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/bebasneue-webfont.woff2') format('woff2'),
+  url('../fonts/bebasneue-webfont.woff') format('woff'),
+  url('../fonts/bebasneue-webfont.ttf') format('truetype'),
+  url('../fonts/bebasneue-webfont.svg#bebas_neueregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'Bebas Neue Regular';
+  src: url('../fonts/bebasneue_regular-webfont.eot');
+  src: url('../fonts/bebasneue_regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/bebasneue_regular-webfont.woff2') format('woff2'),
+  url('../fonts/bebasneue_regular-webfont.woff') format('woff'),
+  url('../fonts/bebasneue_regular-webfont.ttf') format('truetype'),
+  url('../fonts/bebasneue_regular-webfont.svg#bebas_neue_regularregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'Bebas Neue Bold';
+  src: url('../fonts/bebasneue_bold-webfont.eot');
+  src: url('../fonts/bebasneue_bold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/bebasneue_bold-webfont.woff2') format('woff2'),
+  url('../fonts/bebasneue_bold-webfont.woff') format('woff'),
+  url('../fonts/bebasneue_bold-webfont.ttf') format('truetype'),
+  url('../fonts/bebasneue_bold-webfont.svg#bebas_neuebold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'Bebas Neue Book';
+  src: url('../fonts/bebasneue_book-webfont.eot');
+  src: url('../fonts/bebasneue_book-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/bebasneue_book-webfont.woff2') format('woff2'),
+  url('../fonts/bebasneue_book-webfont.woff') format('woff'),
+  url('../fonts/bebasneue_book-webfont.ttf') format('truetype'),
+  url('../fonts/bebasneue_book-webfont.svg#bebas_neuebook') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'Bebas Neue Light';
+  src: url('../fonts/bebasneue_light-webfont.eot');
+  src: url('../fonts/bebasneue_light-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/bebasneue_light-webfont.woff2') format('woff2'),
+  url('../fonts/bebasneue_light-webfont.woff') format('woff'),
+  url('../fonts/bebasneue_light-webfont.ttf') format('truetype'),
+  url('../fonts/bebasneue_light-webfont.svg#bebas_neuelight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+/*@font-face {
+    font-family: 'Bebas Neue Light';
+    src: url('../fonts/BebasNeueLight.otf');
+}*/
+@font-face {
+  font-family: 'Bebas Neue Thin';
+  src: url('../fonts/bebasneue_thin-webfont.eot');
+  src: url('../fonts/bebasneue_thin-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/bebasneue_thin-webfont.woff2') format('woff2'),
+  url('../fonts/bebasneue_thin-webfont.woff') format('woff'),
+  url('../fonts/bebasneue_thin-webfont.ttf') format('truetype'),
+  url('../fonts/bebasneue_thin-webfont.svg#bebas_neuethin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../fonts/HelveticaNeue.eot');
+  src: url('..fonts/HelveticaNeue.eot?#iefix') format('embedded-opentype'),  url('../fonts/HelveticaNeue.otf')  format('opentype'),
+	     url('HelveticaNeue.woff') format('woff'), url('HelveticaNeue.ttf')  format('truetype'), url('../fonts/HelveticaNeue.svg#HelveticaNeue') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+/*@font-face {
+    font-family: 'Bebas Neue Thin';
+    src: url('../fonts/BebasNeueThin.otf');
+}*/
+/*@font-face {
+    font-family: 'Bebas Neue Book';
+    src: url('../fonts/BebasNeueBook.otf');
+}
+@font-face {
+    font-family: 'Bebas Neue Bold';
+    src: url('../fonts/BebasNeueBold.otf');
+}*/
+//
+//    Desktop
+//--------------------------------------
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    h1 {
+        font-size: @font-size-h1-desktop;
+        .lib-css(margin-bottom, @h1__margin-bottom__desktop);
+        font-family: @font__dat-ot-regular;
+    }
+    body {
+        font-size: @font-size__base;
+    }
+}
+
+
+//
+//    Common
+//--------------------------------------
+
+& when (@media-common = true) {
+
+    .items {
+        .lib-list-reset-styles();
+    }
+
+}

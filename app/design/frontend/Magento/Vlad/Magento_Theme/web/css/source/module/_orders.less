@@ -1,0 +1,57 @@
+// /**
+//  * Copyright © 2016 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Variables
+//  ---------------------------------------------
+
+//
+
+//
+//  Common
+//  ---------------------------------------------
+
+& when (@media-common = true) {
+
+    .orders-history{
+        .table{
+
+            tr{
+                th{
+                    font-weight: normal;
+                    font-family: @font__dat-ot-regular;
+                    font-size: 18px;
+                    color: @block__color-content-title;
+                }
+                td{
+                    a{
+                        color: @color-gray20;                              
+                    }
+                    a:first-child{                        
+                        padding-right: 0;
+                        margin-right: 10px;
+                    }
+                }
+
+            }
+        }  
+    }
+}
+
+//
+//  Desktop
+//  ---------------------------------------------
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+}
+
+//
+//  Mobile
+//  ---------------------------------------------
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+}

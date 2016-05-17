@@ -1,0 +1,185 @@
+// /**
+//  * Copyright © 2016 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Variables
+//  ---------------------------------------------
+
+@collapsible-nav-background: @sidebar__background-color;
+@collapsible-nav-color: false;
+@collapsible-nav-current-border: 3px solid transparent;
+@collapsible-nav-current-border-color: @color-orange-red1;
+@collapsible-nav-current-color: false;
+@collapsible-nav-current-font-weight: @font-weight__semibold;
+@collapsible-nav-item-hover: @color-gray91;
+@background-color-box: #fcfafc;
+@block-title__text-transform: uppercase;
+//
+
+//
+//  Common
+//  ---------------------------------------------
+.links_actions(){
+    a{
+        .lib-css(color, @block__color-content-title);
+        padding-right: 10px;
+        &:hover{
+            color: @color-gray82;
+            text-decoration: none;
+        }
+        &:nth-child(2){
+            padding-right: 0;
+            padding-left: 10px;
+            border-left: 1px solid @color-gray82;
+        }
+    }
+}
+& when (@media-common = true) {
+
+    //
+    //    Collapsible navigation
+    //  ---------------------------------------------
+
+    .block-collapsible-nav {
+        background: @block__collapsible-nav-background;
+        padding: 20px;
+        .content {
+            background: @block__collapsible-nav-background;
+            padding: 15px 0;
+            font-family: @font__dat-ot-regular;
+        }
+        .item {
+            margin: 3px 0 0;
+            border-bottom: 1px solid @nav__color-border;
+            font-size: @font-size-normal;
+            &:first-child {
+                border-top: 1px solid @nav__color-border;
+            }
+            a,
+            strong {
+                border-left: 3px solid transparent;
+                text-transform: uppercase;
+                color: @nav__color-item;
+                display: block;
+                padding: 5px 18px 5px 0;
+            }
+            a {
+                text-decoration: none;
+
+                /*&:hover {
+                    .lib-css(background, @collapsible-nav-item-hover);
+                }*/
+            }
+            &.current {
+                a,
+                strong {                    
+                    .lib-css(color, @nav__color-item-current);
+                    font-family: @font__dat-ot-bold;
+                    .lib-css(font-weight, @collapsible-nav-current-font-weight);
+                }
+                a {
+                    /*.lib-css(border-color, @collapsible-nav-current-border-color);*/
+                }
+            }
+        }
+
+    }
+    .account{
+        .block{
+            &-title{
+                color: @block__color-content-title;
+                font-family: @font__dat-ot-regular;
+                font-size: @font-size-normal;
+                border-bottom: 1px solid @color-gray82;
+                text-transform:  @block-title__text-transform;
+                padding-bottom: 10px;
+            }
+            &-content{
+                font-size: @font-size-normal;
+                background-color: @background-color-box;
+                p.empty{
+                    padding-top: 10px;
+                }
+            }
+            &-dashboard-info,
+            &-dashboard-addresses
+            {
+                background-color: @background-color-box;
+                padding: 15px;
+            }
+            &-addresses{
+                &-default, &-list{
+                    .block-title{
+                        text-transform: none;
+                    }
+                }
+            }
+        }
+        .box{
+            .box-title{
+                padding: 10px 0;
+                display: block;
+                span{
+                    font-weight: @font-weight__bold;
+                    font-size: @font-size-normal;
+                    .lib-css(color, @block__color-content-title);
+                }
+            }
+            &-actions{
+                margin: 10px 0;
+                .links_actions();
+            }
+        }
+        .actions{
+            .links_actions();
+        }
+        &.customer-address-index{
+            .block{
+                &-content{
+                    background-color: @color-white;
+                }
+            }
+        }
+        .action.primary{
+            background: @account__primary-nav;
+        }
+    }
+}
+
+//
+//  Desktop
+//  ---------------------------------------------
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .block-collapsible-nav {
+        .title {
+            &:extend(.abs-visually-hidden-desktop all);
+        }
+    }
+}
+
+//
+//  Mobile
+//  ---------------------------------------------
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .block-collapsible-nav {
+        left: 0;
+        position: absolute;
+        top: -21px;
+        width: 100%;
+        z-index: 5;
+        .title {
+            &:extend(.abs-toggling-title-mobile all);
+        }
+        .content {
+            border-bottom: @border-width__base solid @border-color__base;
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
+    }
+}

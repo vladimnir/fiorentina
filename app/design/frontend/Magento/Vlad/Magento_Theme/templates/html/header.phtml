@@ -1,0 +1,43 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+// @codingStandardsIgnoreFile
+
+/**
+ * @var \Magento\Theme\Block\Html\Header $block
+ */
+$welcomeMessage = $block->getWelcome();
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$customerSession = $objectManager->get('Magento\Customer\Model\Session');
+?>
+<?php switch ($block->getShowPart()):
+    case 'welcome':
+        ?>
+        <?php if ($customerSession->isLoggedIn()): ?>
+            <li class="greet welcome" data-bind="scope: 'customer'">
+                <span data-bind="text: customer().fullname ? $t('¡Bienvenido, %1!').replace('%1', customer().fullname) : '<?= $block->escapeHtml($welcomeMessage) ?>'"></span>
+            </li>
+            <script type="text/x-magento-init">
+                {
+                "*": {
+                "Magento_Ui/js/core/app": {
+                "components": {
+                "customer": {
+                "component": "Magento_Customer/js/view/customer"
+                }
+                }
+                }
+                }
+                }
+            </script>
+        <?php endif; ?>
+        <?php break; ?>
+
+    <?php case 'other': ?>
+        <?php echo $block->getShowPart(); ?>
+        <?php echo $block->getChildHtml(); ?>
+        <?php break; ?>
+
+<?php endswitch; ?>

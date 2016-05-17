@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<body>
+    <referenceContainer name="footer-container">           
+            <referenceBlock name="footer_links" remove="true"/> 
+            <referenceBlock name="store_switcher" remove="true"/> 
+         
+            <referenceBlock name="report.bugs" remove="true"/>
+        
+
+     </referenceContainer>
+             <referenceBlock name="footer">
+                <block class="Magento\Cms\Block\Block" name="preguntas" as="preguntas" before="form.subscribe">
+                            <arguments>
+                             <argument name="block_id" xsi:type="string">preguntas</argument>
+                            </arguments>
+                     </block>
+                       <block class="Magento\Cms\Block\Block" name="term" as="term" after="preguntas">
+                            <arguments>
+                             <argument name="block_id" xsi:type="string">term</argument>
+                            </arguments>
+                     </block>
+
+                       <move element="form.subscribe" destination="footer" after="term"/>
+
+
+                      <block class="Magento\Cms\Block\Block" name="email" as="email" after="form.subscribe">
+                            <arguments>
+                             <argument name="block_id" xsi:type="string">email</argument>
+                            </arguments>
+                     </block>
+                      <block class="Magento\Cms\Block\Block" name="follow" as="follow" after="email">
+                            <arguments>
+                             <argument name="block_id" xsi:type="string">follow</argument>
+                            </arguments>
+                     </block>
+
+            </referenceBlock>
+            
+               
+    </body>
+    
+</page>

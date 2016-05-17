@@ -1,0 +1,129 @@
+
+//
+@head-base-color: @color-purple01;
+& when (@media-common = true) {
+    .page-header{
+        .experta{
+            ul{
+                padding: 0;
+                float: left;
+                li{
+                    list-style: none;
+                    display: block;
+                    float: left;
+                    vertical-align: middle;
+                    padding: 0 7px;
+                    position: relative;
+                    border-right: 1px solid @nav__border-right;
+                    a{
+                        color: @head-base-color;
+                        display: block;
+                        .icon-experta{
+
+                            height: 18px;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-size: auto 18px;
+                            display: block;
+                            &.level{
+                                background-image: url("../images/home/esmerald_2X.png");
+                                width: 12px;
+                            }
+                            &.points{
+                                background-image: url("../images/home/monedas_2X.png");
+                                width: 26px;
+                            }
+                            &.notifications{
+                                background-image: url("../images/home/notifications_2X.png");
+                                width: 20px;
+                                i{
+                                    
+                                    font-family: @font__dat-ot-light;
+                                    font-style: normal;
+                                    color: white;
+                                    .lib-font-size(10);
+                                    display: block;
+                                    text-align: center;
+                                }
+                            }
+                        }
+
+                    }
+                    .box-content{
+                        min-width: 155px;
+                        color: @color-white;
+                        background: @head-base-color;
+                        position: absolute;
+                        z-index: @z-index-7;
+                        box-shadow: @modal__box-shadow;
+                        display:none;
+                        &.opened{
+                            display: block;
+                        }
+                        .nro-account{
+                            background: #c964a3;
+                        }
+                        a{
+                            padding: 0 10px;
+                            color: @color-white;
+                            display: block;
+                        }
+                        p{
+                            text-transform: uppercase;
+                            padding: 5px 10px;
+                            margin-bottom: 0;
+                            span{
+
+                                &.value-content{
+                                    font-weight: bold;
+                                    display:block;
+                                }
+                                &.empty{display: block;}
+                            }
+                        }
+                        &.box-notifications{
+                            width: 230px;
+                            border: 1px solid @head-base-color;
+                            background: @color-white;
+                            span{
+                                color: @head-base-color;
+                            }
+                            ul{
+                                padding: 0;
+                                margin-left: 2em;
+
+                                li{                                
+                                    display: list-item;
+                                    padding: 0 7px 7px 0;
+                                    border: 0;
+                                    color: @head-base-color;
+                                    margin: 0;
+                                    list-style: disc outside none;
+                                    display: list-item;                        
+                                    font-weight: bold;
+                                    &.off{
+                                        list-style: circle outside none;
+                                        font-weight: normal;
+                                    }
+                                    &.red{
+                                        color: red;
+                                    }
+                                }
+                                margin-top: 1em;
+                            }
+                            .more-news{
+                                color: @color-gray34;
+                                font-family: @font__dat-ot-light;
+                                text-transform: none;
+                                .lib-font-size(14);
+                                padding-left: 2em;
+                                font-weight: normal;
+                            }
+                        }
+                        padding-bottom: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}

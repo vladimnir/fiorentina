@@ -1,0 +1,44 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<div class="section">
+      <div class="title"><h3>RECIBE NUESTRO NEWSLETTER</h3></div>
+    <div class="box-content">
+        <form class="form subscribe"
+            novalidate
+            action="<?php /* @escapeNotVerified */ echo $block->getFormActionUrl() ?>"
+            method="post"
+            data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+            id="newsletter-validate-detail">
+            <div class="field newsletter">
+                <label class="label" for="newsletter"><span><?php /* @escapeNotVerified */ echo __('') ?></span></label>
+                <div class="control">
+                    <input name="email" type="email" id="newsletter"
+                                placeholder="<?php /* @escapeNotVerified */ echo __('iluisonEnter your email address') ?>"
+                                data-validate="{required:true, 'validate-email':true}"/>
+                </div>
+            </div>
+            <div class="actions">
+                <button class="action subscribe primary" title="<?php /* @escapeNotVerified */ echo __('Subscribe') ?>" type="submit">
+                            <span class="icon"></span>
+                        </button>
+            </div>
+
+
+             <div class="subs-icons">
+                    <span>Siguenos</span>
+                    <span><i class="fb"></i></span>
+                    <span><i class="twi"></i></span>
+                </div>
+                <div class="credit-cards">
+                    <img src="<?php echo $this->getViewFileUrl('images/credit-cards_2X.png'); ?>" />
+                </div>
+        </form>
+    </div>
+</div>
